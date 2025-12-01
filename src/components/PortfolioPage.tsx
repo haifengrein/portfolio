@@ -134,7 +134,7 @@ const PortfolioPage = ({ posts }: PortfolioPageProps) => {
         <div className="mb-8 border border-green-900 bg-green-900/10 p-4 text-xs md:text-sm">
           <p>Last login: {currentTime.toLocaleString()} on ttys001</p>
           <p>Kernel: Linux 5.15.0-generic (x86_64)</p>
-          <p className="mt-2">Type 'help' for available commands or use the navigation bar above.</p>
+          <p className="mt-2">Type &apos;help&apos; for available commands or use the navigation bar above.</p>
         </div>
 
         {view === 'home' ? (
@@ -148,7 +148,10 @@ const PortfolioPage = ({ posts }: PortfolioPageProps) => {
               <div className="pl-4 border-l-2 border-green-900/50">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white tracking-tighter">{content.name}</h1>
                 <p className="text-lg opacity-90 text-green-400 mb-2"> &gt; {content.role}</p>
-                <p className="opacity-60 italic max-w-2xl"> // {content.bio}</p>
+                <p className="opacity-60 italic max-w-2xl">
+                  {'// '}
+                  {content.bio}
+                </p>
               </div>
             </div>
 

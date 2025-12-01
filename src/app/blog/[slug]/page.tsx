@@ -4,8 +4,6 @@ import { notFound } from 'next/navigation';
 import BlogPostContent from '@/components/BlogPostContent';
 import { getAllPosts, getPostBySlug } from '@/lib/markdown';
 
-export const revalidate = 60;
-
 export async function generateStaticParams() {
   const posts = await getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
