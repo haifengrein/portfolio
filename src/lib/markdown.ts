@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
+import type { Plugin } from 'unified';
 import html from 'remark-html';
 import { Language } from '@/data/siteData';
 
@@ -46,7 +47,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  const processedContent = await remark().use(html).process(content);
+  const processedContent = await remark().use(html as unknown as Plugin).process(content);
   const contentHtml = processedContent.toString();
 
   return {
