@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Alex Chen - Full Stack Developer Portfolio',
+  title: 'Haifeng Hou',
   description: 'Full-stack developer portfolio with blog, projects, and interactive GUI/Terminal modes built on Next.js and Tailwind CSS.'
 };
 
