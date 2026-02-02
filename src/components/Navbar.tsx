@@ -1,6 +1,5 @@
 import { Monitor, Menu, Terminal, X } from 'lucide-react';
-import { Language, Content } from '@/data/siteData';
-import { Mode } from '@/types/ui';
+import { Language, Content, Mode } from '@/data/siteData';
 
 export type NavbarProps = {
   mode: Mode;
@@ -43,7 +42,7 @@ const Navbar = ({
           </div>
 
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
-            {['skills', 'blog', 'projects'].map((item) => (
+            {['projects'].map((item) => (
               <button key={item} onClick={() => onNavigate(item)} className="hover:text-black transition-colors">
                 {nav[item as keyof typeof nav]}
               </button>
@@ -72,7 +71,7 @@ const Navbar = ({
 
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-xl p-6 flex flex-col space-y-4 animate-in slide-in-from-top-2">
-            {['home', 'skills', 'blog', 'projects'].map((item) => (
+            {['home', 'projects'].map((item) => (
               <button
                 key={item}
                 onClick={() => onNavigate(item === 'home' ? 'hero' : item)}
@@ -98,7 +97,7 @@ const Navbar = ({
         <div className="flex space-x-4">
           <span className="font-bold text-green-400">root@{contentName}:~#</span>
           <div className="hidden md:flex space-x-4 opacity-70">
-            {['home', 'skills', 'blog', 'projects'].map((item) => (
+            {['home', 'skills', 'projects'].map((item) => (
               <button
                 key={item}
                 onClick={() => onNavigate(item === 'home' ? 'hero' : item)}
